@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  </head>
+  <body>
+    <script>
+      const celsius = 30;
+      const valC = tf.scalar(celsius);
+
+      const fahrenheit = valC
+        .mul(9 / 5)
+        .add(32)
+        .dataSync()[0];
+      const reamur = valC.mul(4 / 5).dataSync()[0];
+
+      console.log(`Fahrenheit: ${fahrenheit}, Reamur: ${reamur}`);
+      valC.dispose();
+    </script>
+  </body>
+</html>

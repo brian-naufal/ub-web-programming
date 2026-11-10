@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  </head>
+  <body>
+    <script>
+      const angka = 45;
+      const t = tf.scalar(angka);
+
+      const akarKuadrat = t.sqrt().dataSync()[0];
+
+      const pangkatDua = t.square().dataSync()[0];
+
+      const nilaiSinus = t
+        .mul(Math.PI / 180)
+        .sin()
+        .dataSync()[0];
+
+      const nilaiCosinus = t
+        .mul(Math.PI / 180)
+        .cos()
+        .dataSync()[0];
+
+      const log10 = t.log().div(Math.log(10)).dataSync()[0];
+
+      console.log({ akarKuadrat, pangkatDua, nilaiSinus, nilaiCosinus, log10 });
+
+      t.dispose();  
+    </script>
+  </body>
+</html>
